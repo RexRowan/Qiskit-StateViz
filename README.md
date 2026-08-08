@@ -112,7 +112,6 @@ reference implementations, not just against expected output shapes.
 
 - [ ] Interactive `plot_state_city` / `plot_state_hinton` equivalents
 - [ ] `ipywidgets` slider for live circuit-parameter sweeps
-- [ ] Qiskit Ecosystem submission
 
 
 ## License
