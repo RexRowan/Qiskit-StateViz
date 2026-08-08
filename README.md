@@ -1,5 +1,7 @@
 # qiskit-stateviz
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 Interactive, Plotly-based statevector visualizations for Qiskit — a drop-in,
 rotate/zoom/hover companion to the static matplotlib views in
 `qiskit.visualization`.
