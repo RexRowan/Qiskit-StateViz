@@ -107,22 +107,6 @@ reference implementations, not just against expected output shapes.
 - [ ] `ipywidgets` slider for live circuit-parameter sweeps
 - [ ] Qiskit Ecosystem submission
 
-## Qiskit Ecosystem submission checklist
-
-Per the current criteria at [github.com/Qiskit/ecosystem](https://github.com/Qiskit/ecosystem):
-
-- [x] Builds on the Qiskit SDK in a meaningful way (takes `Statevector`/
-      `DensityMatrix` objects directly, replaces two `qiskit.visualization`
-      functions with interactive equivalents)
-- [x] Compatible with Qiskit SDK v2.0 or newer (`qiskit>=2.0` in
-      `pyproject.toml`; CI runs against pinned matrix versions plus a
-      separate job pinned to the latest release)
-- [x] OSI-approved license (MIT)
-- [ ] Adhere to the Qiskit Ecosystem code of conduct (adopt on publishing)
-- [ ] Maintainer activity within the last 6 months (satisfied automatically
-      once pushed/committed to GitHub)
-- N/A V2 primitives compatibility — this package doesn't use Sampler/
-      Estimator primitives at all, so there's nothing to migrate
 
 ## License
 
