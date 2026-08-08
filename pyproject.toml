@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qiskit-stateviz"
+version = "0.1.0"
+description = "Interactive Plotly-based statevector visualizations (Q-sphere, Bloch multivector) for Qiskit"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [
+    { name = "Rex Rowan" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "qiskit>=2.0",
+    "numpy>=1.22",
+    "plotly>=5.0",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Topic :: Scientific/Engineering :: Visualization",
+]
+keywords = ["qiskit", "quantum computing", "visualization", "plotly", "statevector", "bloch sphere", "qsphere"]
+
+[project.urls]
+Homepage = "https://github.com/RexRowan/qiskit-stateviz"
+Repository = "https://github.com/RexRowan/qiskit-stateviz"
+Issues = "https://github.com/RexRowan/qiskit-stateviz/issues"
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
