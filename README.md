@@ -1,6 +1,7 @@
 # Qiskit StateViz
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Qiskit Ecosystem](https://qisk.it/e-e9f6e045)](https://qisk.it/e)
 
 ## Screenshots
 
