@@ -2,6 +2,12 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+## Screenshots
+
+![Q-sphere](QSphere.png)
+
+![Multivector Bloch Spheres](Multivector%20Bloch%20Spheres.png)
+
 Interactive, Plotly-based statevector visualizations for Qiskit — a drop-in,
 rotate/zoom/hover companion to the static matplotlib views in
 `qiskit.visualization`.
