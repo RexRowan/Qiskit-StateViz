@@ -89,6 +89,32 @@ Both functions also accept a `DensityMatrix` (for `plot_bloch_multivector_intera
 or a plain `numpy.ndarray` of amplitudes, matching the calling convention of
 `qiskit.visualization`.
 
+### Spin rotation: the Bloch sphere vs. the actual SU(2) state
+
+```python
+from qiskit_stateviz import plot_spin_rotation_interactive
+
+# Defaults to the |+i> state; animates 0-720 degrees with Play/Pause + slider
+fig3 = plot_spin_rotation_interactive()
+fig3.show()
+
+# Or drive it with your own single-qubit state and rotation axis
+fig4 = plot_spin_rotation_interactive(Statevector.from_label("+"), axis="z")
+fig4.show()
+```
+
+`R(theta) = exp(-i theta (n.sigma) / 2)` satisfies `R(2*pi) = -I` for *any*
+axis and *any* initial single-qubit state — a full physical turn always
+multiplies the state by an invisible global phase of -1, and only a second
+full turn (720 degrees / 4*pi) brings it back to +I. `plot_spin_rotation_interactive`
+animates this directly: a Bloch-sphere panel (period 360 degrees, since it
+can't see global phase) next to a dial tracking the SU(2) rotation parameter
+theta/2 (period 720 degrees), so the two panels visibly fall out of sync at
+360 degrees and resync at 720. If no axis is given, one orthogonal to the
+input state's Bloch vector is picked automatically, which keeps the dial's
+`<psi0|psi(theta)>` overlap readout a clean real-valued oscillation between
+-1 and +1.
+
 ### A note on Bloch multivector and entanglement
 
 Like Qiskit's own `plot_bloch_multivector`, the per-qubit Bloch view only
@@ -110,6 +136,7 @@ reference implementations, not just against expected output shapes.
 
 ## Roadmap
 
+- [x] Animated spin-rotation view: Bloch sphere vs. SU(2) state, 720-degree double cover (`plot_spin_rotation_interactive`)
 - [ ] Interactive `plot_state_city` / `plot_state_hinton` equivalents
 - [ ] `ipywidgets` slider for live circuit-parameter sweeps
 
