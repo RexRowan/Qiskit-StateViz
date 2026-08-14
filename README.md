@@ -91,6 +91,8 @@ or a plain `numpy.ndarray` of amplitudes, matching the calling convention of
 
 ### Spin rotation: the Bloch sphere vs. the actual SU(2) state
 
+![Bloch Sphere & Hilbert Space](hilbert.png)
+
 ```python
 from qiskit_stateviz import plot_spin_rotation_interactive
 
