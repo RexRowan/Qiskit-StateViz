@@ -104,6 +104,7 @@ fig3.show()
 fig4 = plot_spin_rotation_interactive(Statevector.from_label("+"), axis="z")
 fig4.show()
 ```
+Or visit [this website](https://spinor.netlify.app/)
 
 `R(theta) = exp(-i theta (n.sigma) / 2)` satisfies `R(2*pi) = -I` for *any*
 axis and *any* initial single-qubit state — a full physical turn always
