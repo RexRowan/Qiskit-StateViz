@@ -164,7 +164,7 @@ Hamiltonian generates, the same formalism behind `qiskit-graph-walks`'
 to a routing heuristic. Girth and spectral gap are computed exactly and
 reported in the title and in `fig.layout.meta`.
 
-See the [`qiskit-eigenlight` README](https://github.com/RexRowan/qiskit-eigenlight)
+See the [`qiskit-eigenlight` README](https://github.com/RexRowan/qiskit-eigenlight) or [visit here](https://eloquent-tapioca-94b894.netlify.app/)
 for what's a real physical quantity here (the eigenvalue gaps, the CTQW
 dynamics) versus a stated simplification (the default uniform transition
 operator; no dissipation, so lines don't broaden).
