@@ -37,6 +37,7 @@ Issues = "https://github.com/RexRowan/qiskit-stateviz/issues"
 
 [project.optional-dependencies]
 dev = ["pytest>=7.0"]
+spectrum = ["qiskit-eigenlight>=0.1.0"]
 
 [tool.setuptools.packages.find]
 where = ["src"]
