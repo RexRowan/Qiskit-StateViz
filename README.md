@@ -62,6 +62,17 @@ notebook, not required by the package itself), install `pylatexenc` too:
 pip install pylatexenc
 ```
 
+`plot_evolution_spectrum` (see below) depends on the separate
+[`qiskit-eigenlight`](https://github.com/RexRowan/qiskit-eigenlight)
+package for its diagonalization/spectrum math. It's an optional extra, not
+a core dependency:
+
+```bash
+pip install qiskit-stateviz[spectrum]
+```
+
+Everything else in this package works fine without it.
+
 ## Usage
 
 ```python
@@ -126,6 +137,35 @@ entangled qubit's Bloch vector has zero length even though the full joint
 state is pure — this view *cannot* show entanglement. Use
 `plot_qsphere_interactive` to see multi-qubit structure directly.
 
+### Emission spectrum: a Cayley graph as light instead of sound
+
+```python
+from qiskit_stateviz import plot_evolution_spectrum
+
+# Cay(Z_12, {1, 5}): a circulant graph on the cyclic group of order 12
+fig5 = plot_evolution_spectrum(n=12, generators={1, 5}, start_vertex=0)
+fig5.show()
+```
+
+Requires the optional `qiskit-eigenlight` dependency (`pip install
+qiskit-stateviz[spectrum]`). Rather than a qubit `Statevector`, this takes
+a Cayley graph `Cay(Z_n, S)` and diagonalizes its adjacency matrix as a
+walk Hamiltonian. The top panel is the Fourier spectrum of a probe
+observable under free evolution — a spectral line at every true eigenvalue
+gap, colored and sized by the actual coherence amplitude between that pair
+of eigenstates — deliberately rendered as light rather than mapped to
+sound, in contrast to sonification approaches to the same underlying
+object. The bottom panel is the continuous-time quantum walk this same
+Hamiltonian generates, the same formalism behind `qiskit-graph-walks`'
+`WalkBasedLayout` mixing signatures, just shown directly instead of reduced
+to a routing heuristic. Girth and spectral gap are computed exactly and
+reported in the title and in `fig.layout.meta`.
+
+See the [`qiskit-eigenlight` README](https://github.com/RexRowan/qiskit-eigenlight)
+for what's a real physical quantity here (the eigenvalue gaps, the CTQW
+dynamics) versus a stated simplification (the default uniform transition
+operator; no dissipation, so lines don't broaden).
+
 ## Development
 
 ```bash
@@ -140,6 +180,7 @@ reference implementations, not just against expected output shapes.
 ## Roadmap
 
 - [x] Animated spin-rotation view: Bloch sphere vs. SU(2) state, 720-degree double cover (`plot_spin_rotation_interactive`)
+- [x] Cayley graph emission spectrum + continuous-time quantum walk dynamics, via optional `qiskit-eigenlight` dependency (`plot_evolution_spectrum`)
 - [ ] Interactive `plot_state_city` / `plot_state_hinton` equivalents
 - [ ] `ipywidgets` slider for live circuit-parameter sweeps
 

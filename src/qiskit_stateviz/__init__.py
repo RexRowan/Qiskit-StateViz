@@ -20,3 +20,15 @@ __all__ = [
     "plot_spin_rotation_interactive",
     "StateVizError",
 ]
+
+# plot_evolution_spectrum depends on the optional qiskit-eigenlight package
+# (`pip install qiskit-stateviz[spectrum]`). Importing qiskit_stateviz
+# itself must never fail just because that extra isn't installed, so the
+# import is guarded here rather than done unconditionally like the ones
+# above.
+try:
+    from .spectrum import plot_evolution_spectrum  # noqa: F401
+
+    __all__.append("plot_evolution_spectrum")
+except ImportError:
+    pass
