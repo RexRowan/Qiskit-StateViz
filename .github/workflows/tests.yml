@@ -24,7 +24,7 @@ jobs:
       - name: Install package and test dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -e ".[dev]"
+          pip install -e ".[dev,spectrum]"
 
       - name: Run tests
         run: pytest tests/ -v
@@ -42,6 +42,6 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install --upgrade qiskit
-          pip install -e ".[dev]"
+          pip install -e ".[dev,spectrum]"
       - name: Run tests
         run: pytest tests/ -v
