@@ -139,6 +139,9 @@ state is pure — this view *cannot* show entanglement. Use
 
 ### Emission spectrum: a Cayley graph as light instead of sound
 
+![1](1.png)
+![2](2.png)
+
 ```python
 from qiskit_stateviz import plot_evolution_spectrum
 
